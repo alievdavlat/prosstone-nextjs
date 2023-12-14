@@ -1,0 +1,65 @@
+
+.choose {
+  margin-top: 8rem;
+
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+		padding: 0rem 9rem;
+
+  &_item {
+    width: 20.5%;
+		margin-right: 2%;
+		padding: 2rem 2rem 4rem;
+		background: #F8F8F8;
+		border-radius: 1rem;
+		position: relative;
+		overflow: hidden;
+    transition: all 0.5s ease;
+
+    
+
+    &:nth-child(4n) {
+			margin-right: 0;
+		}
+
+    &:hover {
+			box-shadow: 0px 100px 80px rgba(0, 0, 0, 0.07), 0px 64.8148px 46.8519px rgba(0, 0, 0, 0.0531481), 0px 38.5185px 25.4815px rgba(0, 0, 0, 0.0425185), 0px 20px 13px rgba(0, 0, 0, 0.035), 0px 8.14815px 6.51852px rgba(0, 0, 0, 0.0274815), 0px 1.85185px 3.14815px rgba(0, 0, 0, 0.0168519);
+
+			div {
+				background: #000;
+			}
+		}
+
+		h4 {
+			font-size: 1.1rem;
+			font-weight: 600;
+			margin-bottom: 1rem;
+		}
+
+		p {
+			line-height: 150%;
+			font-weight: 300;
+		}
+
+		div{
+			border-radius: 1rem 0;
+			padding: .85rem 1rem;
+			background: #b8885cff;
+			position: absolute;
+			right: 0;
+			bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s ease-in-out;
+			img {
+				width: 2rem;
+			}
+		}
+
+  }   
+  }
+}
