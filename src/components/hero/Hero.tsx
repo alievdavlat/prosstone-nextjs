@@ -1,54 +1,69 @@
+//@ts-nocheck
 import React from 'react'
-import { heroData } from '@/constants'
-import './Hero.css'
+import axios from 'axios'
+import { FaPhoneAlt } from "react-icons/fa";
 
-const Hero = () => {
 
+type Props = {
+  setshowFeedback:(showFeedback:boolean) => void;
+}
+
+const Hero:React.FC<Props> = ({setshowFeedback}) => {
+const [heroData , setHeroData] = React.useState([])
+const [mainData, setMainData] = React.useState([])
+
+
+  React.useEffect(  () => {
+    
+    const getdata = async () => {
+      const response = await axios.get(`http://localhost:1337/api/hero?populate=*`) 
+      setHeroData(response?.data)
+
+      const mainDataRes = await axios.get('http://localhost:1337/api/main-data?populate=*')
+      setMainData(mainDataRes.data.data.attributes)
+      
+    }
+
+
+    getdata()
+  }, [])
 
   return (
-    <div className='hero' style={{backgroundImage:`url(${heroData.bg.src})`}}>
-
+    <section className="hero" style={{backgroundImage:`url(http://localhost:1337${heroData?.data?.attributes?.background?.data?.attributes?.url})`}} >
       <div className="container">
-
-        <div className="hero-text">
-
-         <h1>
-          {heroData?.title.slice(0, 22)} <br />
-          {heroData?.title.slice(22, 25)}
-            <strong>
-              {heroData?.title.slice(25, 32)}
-            </strong>
-          {heroData?.title.slice(32, 34)}
-          <strong>{heroData?.title.slice(34, 41)}</strong>
-          {heroData?.title.slice(41)}
-        </h1>
-
-          <ul className='hero-text_services'>
+        <div className="hero_content">
+          <h1 className="section_title">
             {
-              heroData.heroServices.map((item, index) => (
-                <li key={item.id}>
-                  <img src={item?.icon?.src} alt="hero services" />
-                  <span>
-                  {item.title}
-                  </span>
-                </li>
-              ))
+              heroData?.data?.attributes.title.slice(0, 23)
+            }
+            <br />
+            {heroData?.data?.attributes.title.slice(23, 25)}
+             <strong>{heroData?.data?.attributes.title.slice(25, 33)}</strong>
+             {heroData?.data?.attributes.title.slice(33, 35)}
+             <strong>{heroData?.data?.attributes.title.slice(35, 42)}</strong> 
+             {heroData?.data?.attributes.title.slice(42)}
+          </h1>
+
+          <ul className="hero_content-list">
+            {
+            heroData?.data?.attributes?.hero_advantages?.hero_advantages.map(item => (
+              <li key={item}>{item}</li>
+            ))
+            
             }
           </ul>
 
-        <div className="hero-text_btns">
-          <button>
-            Рассчитать стоимость
-          </button>
-           <a href="tel:+998999331564">+998 (99) 933 15 64</a>
-        </div>
-        
-          
-        </div> 
-       
-      </div>
+          <div className="hero_content-btns" >
+            <a href="#"  onClick={() => setshowFeedback(true)}> Рассчитать стоимость </a>
 
-    </div>
+            <a href={`tel:${mainData?.primary_phone}`} className="contact-tel">
+            <FaPhoneAlt />
+              {mainData?.primary_phone}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
 

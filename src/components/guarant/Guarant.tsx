@@ -1,37 +1,52 @@
+//@ts-nocheck
 import React from 'react'
-import { guarantsData } from '@/constants'
-import './guarants.css'
+import axios from 'axios'
 
-type Props = {}
+type Props = {
+  setshowFeedback:(showFeedback:boolean) => void;
+}
+const Guarant:React.FC<Props> = ({setshowFeedback}) => {
+    const [guarants, setguarants] = React.useState([])
 
-const Guarant = (props: Props) => {
-  console.log(guarantsData.title.slice(0,11));
-  
+  React.useEffect(() => {
+    const getGuarant = async () => {
+      const response = await axios.get(`http://localhost:1337/api/guarant?populate=*`)
+      setguarants(response?.data?.data?.attributes)
+      
+    }
+    getGuarant()
+    }, [])
+
+    
   return (
-  <div className="guarants-wrapp">
-    <div className='guarants' style={{backgroundImage:`url(${guarantsData.bg.src})`}}>
-        <div className='guarants-left'>
+    <section data-aos="fade-right" class="guarants">
+        <div class="container">
+          <div class="guarants_wrapp">
+            <div class="guarants-left">
+              <h2>
+                {guarants?.title?.slice(0, 11)} <br/> <strong>{guarants?.title?.slice(11)}</strong>
+              </h2>
 
-          <p>
-            {guarantsData?.title.slice(0,11)} <br />
-            <strong>{guarantsData?.title.slice(11)}</strong>
-          </p>
+              <a href="#"  class="feedback-open" onClick={() => setshowFeedback(true)}>
+                Консультация
+              </a>
 
-          <button className='guarants-left_btn'>
-          Консультация
-          </button>
+            </div>
 
-        </div>
+            <div class="guarants-right">
+              <p>
+                {guarants?.subtitle}
+              </p>
+              
+            <div class="guarants-right_img">
+                <img src={`http://localhost:1337${guarants?.brands?.data?.attributes?.url}`} alt="brands"/>
+              </div>
 
-        <div className='guarants-right'>
-          <p>{guarantsData?.subtitle}</p>
+            </div>
 
-          <div className='guarants-right_image'>
-            <img src={guarantsData?.image?.src} alt="guarants" />
           </div>
         </div>
-    </div>
-  </div>
+    </section>
   )
 }
 

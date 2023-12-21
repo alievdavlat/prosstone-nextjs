@@ -1,42 +1,5 @@
-import {
-  check,
-  choose1,
-  choose2,
-  choose3,
-  choose4,
-  client,
-  companies,
-  facebook,
-  guarantsBg,
-  heroBg,
-  instagram,
-  locationIcon,
-  mail,
-  partners1,
-  partners2,
-  partners3,
-  partners4,
-  partners5,
-  partners6,
-  partnersBg,
-  payment1,
-  payment2,
-  payment3,
-  phone,
-  products1,
-  products2,
-  products3,
-  products4,
-  products5,
-  products6,
-  products7,
-  products8,
-  products9,
-  projects1,
-  projects2,
-  reviews,
-  telegram,
-} from "@/assets";
+import { brands, checkicon, choose1, choose2, choose3, choose4, guarantsBg, heroImage, location, mailIcon, masterCard, partners1, partners2, partners3, partners4, partners5, partners6, phoneIcon, products1, products2, products3, products4, products5, products6, products7, products8, products9, projects1, projects2, projects3, projects4, projects5, projects6, review, user, uzcard, visa } from "@/assets";
+
 
 
 
@@ -68,26 +31,26 @@ export const heroData = {
   heroServices: [
     {
       id: 1,
-      icon: check,
+      icon: checkicon,
       title: "Гарантия 3 года",
     },
     {
       id: 2,
-      icon: check,
+      icon: checkicon,
       title: "Гибкие условия оплаты",
     },
     {
       id: 3,
-      icon: check,
+      icon: checkicon,
       title: "На 15-30% дешевле, чем в салонах",
     },
     {
       id: 4,
-      icon: check,
+      icon: checkicon,
       title: "Установка в день доставки",
     },
   ],
-  bg:heroBg
+  bg:heroImage
 };
 
 export const chooseData = {
@@ -174,8 +137,8 @@ export const productsData = {
 export const guarantsData = {
   title: "Гарантия на работу и камень 3 года",
   subtitle: "Закупаем камень от мировых производителей:",
-  image: companies,
-  bg: guarantsBg,
+  image: brands,
+  bg:guarantsBg,
 };
 
 export const projectsData = {
@@ -209,7 +172,7 @@ export const projectsData = {
       color: "Toluca Sand",
       size: "3000*600 мм",
       year: "2022",
-      image: projects2,
+      image: projects3,
     },
     {
       id: 4,
@@ -219,7 +182,7 @@ export const projectsData = {
       color: "Toluca Sand",
       size: "3000*600 мм",
       year: "2022",
-      image: projects2,
+      image: projects4,
     },
     {
       id: 5,
@@ -229,7 +192,7 @@ export const projectsData = {
       color: "Toluca Sand",
       size: "3000*600 мм",
       year: "2022",
-      image: projects2,
+      image: projects5,
     },
     {
       id: 6,
@@ -239,40 +202,9 @@ export const projectsData = {
       color: "Black Noir",
       size: "3.85 м2",
       year: "2022",
-      image: projects1,
+      image: projects6,
     },
-    {
-      id: 7,
-      address: "г.Ташкент",
-      title: "Подоконник из искусственного камня",
-      material: "Caesarstone",
-      color: "Black Noir",
-      size: "3.85 м2",
-      year: "2022",
-      image: projects1,
-    },
-    ,
-    {
-      id: 8,
-      address: "г.Ташкент",
-      title: "Подоконник из искусственного камня",
-      material: "Caesarstone",
-      color: "Black Noir",
-      size: "3.85 м2",
-      year: "2022",
-      image: projects1,
-    },
-    ,
-    {
-      id: 9,
-      address: "г.Ташкент",
-      title: "Подоконник из искусственного камня",
-      material: "Caesarstone",
-      color: "Black Noir",
-      size: "3.85 м2",
-      year: "2022",
-      image: projects1,
-    },
+   
   ],
 };
 
@@ -282,72 +214,72 @@ export const reviewsData = {
     {
       id: 1,
       owner: "Наргиза Халилова",
-      avatar: client,
+      avatar: user,
       source: "Написал(а) через Instagram",
       review:
         "Купили мраморную столешницу на кухню в Старстоун. Приезжал замерщик - бесплатно и через две недели поставили в срок, успели до Нового года. Цены адекватные от производителя со скидкой. Хотим заказать подоконники из того же камня. Рекомендую всем.)",
       rating: 5,
-      image: reviews,
+      image: review,
     },
     {
       id: 2,
       owner: "Наргиза Халилова",
-      avatar: client,
+      avatar: user,
       source: "Написал(а) через Instagram",
       review:
         "Купили мраморную столешницу на кухню в Старстоун. Приезжал замерщик - бесплатно и через две недели поставили в срок, успели до Нового года. Цены адекватные от производителя со скидкой. Хотим заказать подоконники из того же камня. Рекомендую всем.)",
       rating: 5,
-      image: reviews,
+      image: review,
     },
     {
       id: 3,
       owner: "Наргиза Халилова",
-      avatar: client,
+      avatar: user,
       source: "Написал(а) через Instagram",
       review:
         "Купили мраморную столешницу на кухню в Старстоун. Приезжал замерщик - бесплатно и через две недели поставили в срок, успели до Нового года. Цены адекватные от производителя со скидкой. Хотим заказать подоконники из того же камня. Рекомендую всем.)",
       rating: 5,
-      image: reviews,
+      image: review,
     },
     {
       id: 4,
       owner: "Наргиза Халилова",
-      avatar: client,
+      avatar: user,
       source: "Написал(а) через Instagram",
       review:
         "Купили мраморную столешницу на кухню в Старстоун. Приезжал замерщик - бесплатно и через две недели поставили в срок, успели до Нового года. Цены адекватные от производителя со скидкой. Хотим заказать подоконники из того же камня. Рекомендую всем.)",
       rating: 5,
-      image: reviews,
+      image: review,
     },
     {
       id: 5,
       owner: "Наргиза Халилова",
-      avatar: client,
+      avatar: user,
       source: "Написал(а) через Instagram",
       review:
         "Купили мраморную столешницу на кухню в Старстоун. Приезжал замерщик - бесплатно и через две недели поставили в срок, успели до Нового года. Цены адекватные от производителя со скидкой. Хотим заказать подоконники из того же камня. Рекомендую всем.)",
       rating: 5,
-      image: reviews,
+      image: review,
     },
     {
       id: 6,
       owner: "Наргиза Халилова",
-      avatar: client,
+      avatar: user,
       source: "Написал(а) через Instagram",
       review:
         "Купили мраморную столешницу на кухню в Старстоун. Приезжал замерщик - бесплатно и через две недели поставили в срок, успели до Нового года. Цены адекватные от производителя со скидкой. Хотим заказать подоконники из того же камня. Рекомендую всем.)",
       rating: 5,
-      image: reviews,
+      image: review,
     },
     {
       id: 7,
       owner: "Наргиза Халилова",
-      avatar: client,
+      avatar: user,
       source: "Написал(а) через Instagram",
       review:
         "Купили мраморную столешницу на кухню в Старстоун. Приезжал замерщик - бесплатно и через две недели поставили в срок, успели до Нового года. Цены адекватные от производителя со скидкой. Хотим заказать подоконники из того же камня. Рекомендую всем.)",
       rating: 5,
-      image: reviews,
+      image: review,
     },
   ],
 };
@@ -355,7 +287,7 @@ export const reviewsData = {
 export const partenersData = {
   titel: "нам доверяют",
   count: "172",
-  bg:partnersBg,
+  bg:'',
   partners: [
     {
       id: 1,
@@ -387,20 +319,20 @@ export const partenersData = {
 export const ourContactData = {
   title: "НАШИ КОНТАКТЫ",
   number1: {
-    icon:phone,
+    icon:phoneIcon,
     number:"+998 (90) 347 01 00"
   },
   number2: {
-    icon:phone,
+    icon:phoneIcon,
     number:"+998 (90) 806 13 10",
   },
   address: {
     address:'Адрес: Бизнес-центр "Авалон", 1-этаж, ул. Ойбека 38а, г.Ташкент',
-    icon:locationIcon
+    icon:location
   },
   mail: {
     mail:"prostones.uz@gmail.com",
-    icon:mail
+    icon:mailIcon
   },
 };
 
@@ -408,32 +340,32 @@ export const ourContactData = {
 export const paymentData = [
 {
   id:1,
-  image:payment1
+  image:uzcard
 },
 {
   id:2,
-  image:payment2
+  image:visa
 },
 {
   id:3,
-  image:payment3
+  image:masterCard
 }
 ]
 
 export const socialData =  [
   {
     id:1,
-    icon:telegram,
+    icon:'',
     link:""
   },
   {
     id:2,
-    icon:instagram,
+    icon:'',
     link:""
   },
   {
     id:3,
-    icon:facebook,
+    icon:'',
     link:""
   },
   

@@ -1,94 +1,91 @@
-//  icons
+import logoIcon from './img/logo.svg'
 
-import LogoIcon from "./icons/LogoIcon";
-import TelegramIcon from "./icons/TelegramIcon";
-import InstagramIcon from "./icons/InstagramIcon";
-import FacebookIcon from "./icons/FacebookIcon";
+import heroImage from '../assets/img/main.jpg'
 
-// bg 
+import phoneIcon from '../assets/img/call.svg'
 
-import guarantsBg from '../assets/images/bg/guarants-bg.png'
-import partnersBg from '../assets/images/bg/partners-bg.png'
+import checkicon from '../assets/img/check.svg'
 
+import user from '../assets/img/user.png'
 
+import review from '../assets/img/reviews.jpg'
 
-// images 
-import choose1 from '../assets/images/choose/choose1.png'
-import choose2 from '../assets/images/choose/choose2.png'
-import choose3 from '../assets/images/choose/choose3.png'
-import choose4 from '../assets/images/choose/choose4.png'
+import arrrowRight from '../assets/img/arrow-right.svg'
+import arrrowLeft from '../assets/img/arrow-left.svg'
 
-import partners1 from  '../assets/images/patners/partners1.png'
-import partners2 from  '../assets/images/patners/partners2.png'
-import partners3 from  '../assets/images/patners/partners3.png'
-import partners4 from  '../assets/images/patners/partners4.png'
-import partners5 from  '../assets/images/patners/partners5.png'
-import partners6 from  '../assets/images/patners/partners6.png'
+import location from '../assets/img/location.svg'
+
+import mailIcon from '../assets/img/mail.svg'
+
+import visa from '../assets/img/visa.png'
+import masterCard from '../assets/img/mastercard.png'
+import uzcard from '../assets/img/uzcard.png'
+
+import arrowTop from '../assets/img/arrow-top.svg'
 
 
-import payment1 from './images/payment/payment1.png'
-import payment2 from './images/payment/payment2.png'
-import payment3 from './images/payment/payment3.png'
+import brands from './img/brands.png'
+import guarantsBg from '../assets/img/guarant-bg.png'
+
+import choose1 from '../assets/img/choose1.svg'
+import choose2 from '../assets/img/choose2.svg'
+import choose3 from '../assets/img/choose3.svg'
+import choose4 from '../assets/img/choose4.svg'
 
 
-import products1 from '../assets/images/products/product1.jpg'
-import products2 from '../assets/images/products/product2.png'
-import products3 from '../assets/images/products/product3.png'
-import products4 from '../assets/images/products/product4.png'
-import products5 from '../assets/images/products/product5.png'
-import products6 from '../assets/images/products/product6.png'
-import products7 from '../assets/images/products/product7.png'
-import products8 from '../assets/images/products/product8.png'
-import products9 from '../assets/images/products/product9.png'
+
+import products1 from '../assets/img/product1.jpg'
+import products2 from '../assets/img/product2.jpg'
+import products3 from '../assets/img/product3.jpg'
+import products4 from '../assets/img/product4.jpg'
+import products5 from '../assets/img/product5.jpg'
+import products6 from '../assets/img/product6.jpg'
+import products7 from '../assets/img/product7.jpg'
+import products8 from '../assets/img/product8.jpg'
+import products9 from '../assets/img/product9.jpg'
 
 
-import projects1 from '../assets/images/projects/projects1.png'
-import projects2 from '../assets/images/projects/projects2.png'
 
 
-import reviews from '../assets/images/reviews/reviews.png'
+import projects1 from '../assets/img/projects1.jpg'
+import projects2 from '../assets/img/projects2.jpg'
+import projects3 from '../assets/img/projects3.jpg'
+import projects4 from '../assets/img/projects4.jpg'
+import projects5 from '../assets/img/projects5.jpg'
+import projects6 from '../assets/img/projects6.jpg'
 
-import client from './images/client.png'
 
-import companies from './images/companies.png'
 
-import heroBanner from './images/hero-banner.jpg'
+import partnersbg from '../assets/img/partners-bg.jpg'
+import partners1 from '../assets/img/partners1.png'
+import partners2 from '../assets/img/partners2.png'
+import partners3 from '../assets/img/partners3.png'
+import partners4 from '../assets/img/partners4.png'
+import partners5 from '../assets/img/partners5.png'
+import partners6 from '../assets/img/partners6.png'
 
-import check from './images/check.svg'
 
-import   locationIcon from '../assets/images/location.svg'
 
-import mail from './images/mail.svg'
-
-import phone from './images/phone.svg'
-
-import telegram from '../assets/images/telegram.svg'
-import facebook from './images/facebook.svg'
-import instagram from './images/Instagram.svg'
-
-import heroBg from './images/hero-banner.jpg'
 
 
 export {
-  LogoIcon,
-  TelegramIcon,
-  InstagramIcon,
-  FacebookIcon,
-  guarantsBg,
-  partnersBg,
+  location,
+  heroImage, 
+  phoneIcon, 
+  checkicon,
+  review,
+  arrowTop, 
+  arrrowLeft, 
+  arrrowRight,
+  mailIcon,
+  visa,
+  masterCard,
+  uzcard,
+  brands,
   choose1,
   choose2,
   choose3,
   choose4,
-  partners1,
-  partners2,
-  partners3,
-  partners4,
-  partners5,
-  partners6,
-  payment1,
-  payment2,
-  payment3,
   products1,
   products2,
   products3,
@@ -98,18 +95,20 @@ export {
   products7,
   products8,
   products9,
+  partners1,
+  partners2,
+  partners3,
+  partners4,
+  partners5,
+  partners6,
   projects1,
   projects2,
-  reviews,
-  client,
-  companies,
-  heroBanner,
-  check,
-  phone,
-  mail,
-  locationIcon,
-  instagram,
-  telegram,
-  facebook,
-  heroBg
+  projects3,
+  projects4,
+  projects5,
+  projects6,
+  partnersbg,
+  logoIcon,
+  user,
+  guarantsBg
 }

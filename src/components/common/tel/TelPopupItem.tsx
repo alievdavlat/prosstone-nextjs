@@ -1,5 +1,4 @@
 import React from 'react'
-import './Tel.css'
 
 type Props = {}
 

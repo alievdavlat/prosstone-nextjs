@@ -1,34 +1,56 @@
+// @ts-nocheck
+import axios from 'axios'
 import React from 'react'
-import { chooseData } from '@/constants'
-import './Chose.css'
-import { ChooseItem } from '..'
 
 type Props = {}
 
 const ChooseSection = (props: Props) => {
-  
-  
-  
-  return (
-    <div className="container">
 
-    <div className='choose'>
-      <h1 className='choose-title section-title'>
-        {chooseData?.title.slice(0,10)} <strong>{chooseData?.title.slice(10)}</strong>
-      </h1>
+  const [choosesData, setChoosesData] = React.useState([])
+
+  React.useEffect(() => {
+    const getChooses  = async () => {
+      const chooseRes = await axios.get(`http://localhost:1337/api/chooses?populate=*`)
+      setChoosesData(chooseRes?.data?.data)
+    }    
+    getChooses()
+  }, [])
+
+  
+return (
+    <section className="choose" id="choose">
+      <div className="container">
+        <div className="choose-wrap">
+          <h2 className="section-title">
+            За что нас <strong>выбирают</strong>?
+          </h2>
+
+          <div className="choose_content">
+            	
+            
+            
+          {
+            choosesData?.map(item  => (
+              <div className="choose_content-item" key={item.id}>
+              <div className="choose_content-item__title">
+                {item?.attributes?.title}
+              </div>
+              <p className="choose_content-item__text">
+                {item?.attributes?.description}
+              </p>
+              <div className="choose_content-item_icon">
+                <img src={`http://localhost:1337${item?.attributes?.icon?.data?.attributes?.url}`} alt="ico"/>
+              </div>
+            </div>
+            ))
+          }
+
+          </div>
 
 
-      <div className="choose-content">
-        {
-          chooseData?.choose.map((item , index) => (
-            <ChooseItem {...item} key={item.id}/>
-          ))
-        }
+        </div>
       </div>
-
-    </div>
-    
-    </div>
+    </section>
   )
 }
 
