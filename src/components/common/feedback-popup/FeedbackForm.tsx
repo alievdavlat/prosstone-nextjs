@@ -5,12 +5,19 @@ import axios from 'axios';
 
 type Props = {
   setshowFeedback:(showFeedback:boolean) => void;
+  showFeedback:boolean;
 }
 
-const FeedbackForm:React.FC<Props> = ({setshowFeedback}) => {
+const FeedbackForm:React.FC<Props> = ({setshowFeedback,showFeedback}) => {
   const [showDone, setShowDone] = React.useState(false)
   const [number, setnumber] = React.useState('')
   const [username, setuserame] = React.useState('')
+
+  const handleClose = (e:any) => {
+    if (e.target.id === 'feedback') {
+      setshowFeedback(false)
+    }
+  } 
 
   const sendFeedback = async (e:any) => {
     e.preventDefault()
@@ -27,7 +34,7 @@ const FeedbackForm:React.FC<Props> = ({setshowFeedback}) => {
   }
 
   return (
-    <div className="feedback">
+    <div id='feedback' className={`feedback ${showFeedback ? 'fadeIn' : 'fadeOut'}`} onClick={handleClose}>
       <div className="feedback-content">
         <div className="feedback-close" onClick={() => setshowFeedback(false)}>
           <img src={closeIcon?.src} alt="ico" />

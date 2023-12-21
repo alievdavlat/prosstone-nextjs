@@ -17,6 +17,7 @@ import { arrowTop } from '@/assets';
 import location from '../../assets/img/marker.svg'
 import mail  from '../../assets/img/mail.svg'
 import loctionIcon from '../../assets/img/location.svg'
+import Link from 'next/link';
 const API_KEY = "";
 
 const center = [47.2313, 39.7233];
@@ -251,9 +252,9 @@ const Footer = () => {
       <div className="footer-bot">
         <div className="container">
           <div className="footer__logo">
-          <a href="/">
+            <Link href="/">            
             <img src={logo.src} alt="ProStone" />
-          </a>
+            </Link>
 
           </div>
           <div className="footer-copy">

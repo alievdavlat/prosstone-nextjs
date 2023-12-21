@@ -11,11 +11,20 @@ type Props = {
   year:string;
   zoomIcon:any
   setshowFeedback:any
+  setShowPopup:(showZoomPopup:boolean) => void;
+  setImgUrl:(imgUrl:string) => void;
 }
 
-const ProjectsItem:React.FC<Props> = ({setshowFeedback, address, color,image, material, size, title, year, zoomIcon}) => {
+const ProjectsItem:React.FC<Props> = ({setshowFeedback, address, color,image, material, size, title, year, zoomIcon, setImgUrl, setShowPopup}) => {
+  const hanldeZoomClick = (img:string) => {
+    setImgUrl(img)
+    setShowPopup(true)
+  }
+  
+
+  
   return (
-    <div className="projects-content_item" >
+    <div className="projects-content_item">
     <div className="projects-content_item__img">
       <img src={image} alt="ico" />
     </div>
@@ -23,8 +32,8 @@ const ProjectsItem:React.FC<Props> = ({setshowFeedback, address, color,image, ma
       <div className="projects-content_item__header-location">
         {address}
       </div>
-      <div className="projects-content_item__header-zoom">
-        <img src={zoomIcon} alt="zoom-image" />
+      <div className="projects-content_item__header-zoom" >
+        <img src={zoomIcon} alt="zoom-image"  onClick={() => hanldeZoomClick(image)}/>
       </div>
     </div>
     <h3 className="projects-content_item__name">

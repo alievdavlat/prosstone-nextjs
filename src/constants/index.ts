@@ -7,12 +7,12 @@ export const navbarItems = [
   {
     id: 1,
     title: "Почему мы?",
-    path: "whatUs",
+    path: "choose",
   },
   {
     id: 2,
     title: "Направления",
-    path: "direction",
+    path: "products",
   },
   {
     id: 3,
@@ -22,7 +22,7 @@ export const navbarItems = [
   {
     id: 4,
     title: "Контакты",
-    path: "contact",
+    path: "footer",
   },
 ];
 

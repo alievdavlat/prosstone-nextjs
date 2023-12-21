@@ -4,14 +4,22 @@ import closeIcon from '../../../assets/img/close.svg'
 type Props = {
   setShowTelPopUp:(showTelPopUp:boolean) => void;
 	setshowFeedback:(showFeedback:boolean) => void;
+	showTelPopUp:boolean;
 
 }
 
 
 
-const TelPopup:React.FC<Props> = ({setShowTelPopUp, setshowFeedback}) => {
+const TelPopup:React.FC<Props> = ({setShowTelPopUp, setshowFeedback, showTelPopUp}) => {
+
+	const handleClick = (e:any) => {
+		if (e.target.id === 'buttons') {
+			setShowTelPopUp(false)
+		}
+	}
+
   return (
-<div className="buttons">
+<div id='buttons' className={`buttons ${showTelPopUp ? 'fadeIn' :'fadeOut'}`} onClick={handleClick}>
 		<div className="buttons-content">
 			<a href="#" className="blue" target="_blank">
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

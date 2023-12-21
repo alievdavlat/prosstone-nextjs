@@ -15,10 +15,12 @@ import zoommIcon from '../../assets/img/zoom.svg'
 
 type Props = {
   setshowFeedback:(showFeedback:boolean) => void;
+  setShowPopup:(showZoomPopup:boolean) => void;
+  setImgUrl:(imgUrl:string) => void;
 }
 
 
-const Projects:React.FC<Props> = ({setshowFeedback}) => {
+const Projects:React.FC<Props> = ({setshowFeedback, setImgUrl, setShowPopup}) => {
   const [projects, setProjects] = React.useState([])
   const [swiperRef, setSwiperRef] = React.useState(null);
 
@@ -105,6 +107,8 @@ const nextHandler = () => {
           projects.map((item) => (
           <SwiperSlide  key={item?.id}>
              <ProjectsItem 
+              setShowPopup={setShowPopup}
+              setImgUrl={setImgUrl}
               setshowFeedback={setshowFeedback}
               year={item?.attributes?.year}
               address={item?.attributes?.address}

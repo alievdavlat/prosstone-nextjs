@@ -3,6 +3,7 @@ import React from "react";
 import logo from '../../assets/img/logo.svg'
 import { navbarItems } from "@/constants";
 import axios from "axios";
+import Link from "next/link";
   
 
 type Props = {
@@ -11,7 +12,7 @@ type Props = {
 
 const Header:React.FC<Props> = ({setshowFeedback}) => {
 
-  const [active , setActive] = React.useState<any>(null)
+  const [hoveSocial , setHoverSocial] = React.useState<any>(false)
   const [socialsData, setSocialsData] = React.useState([])
   React.useEffect(() => {
     const getSocials = async () => {
@@ -28,9 +29,9 @@ const Header:React.FC<Props> = ({setshowFeedback}) => {
       <div className="container">
         <nav className="header_nav">
             <div className="header_nav-logo">
-              <a href="/">
+              <Link href={'/'}>
                 <img src={logo.src} alt="ProStone" />
-              </a>
+              </Link>
             </div>
 
           <ul className="header_nav-menu">
@@ -50,9 +51,10 @@ const Header:React.FC<Props> = ({setshowFeedback}) => {
           <ul className="header_nav-social">
           {
             socialsData.map((item) => (
-          <li key={item?.id}>
+          <li key={item?.id} onMouseOver={() => setHoverSocial(true)} onMouseLeave={() => setHoverSocial(false)}>
             <a href="#" target="_blank">
-              <img  src={`http://localhost:1337${item?.attributes?.icon?.data?.attributes?.url}`} fil alt="" />
+                 {/* <img  src={`http://localhost:1337${item?.attributes?.white_icon?.data?.attributes?.url}`}  alt="social" /> */}
+                 <img  src={`http://localhost:1337${item?.attributes?.icon?.data?.attributes?.url}`}  alt="social" />
             </a>
           </li>
             ))

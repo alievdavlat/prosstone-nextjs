@@ -129,6 +129,15 @@ $random: #eb43ff;
 
 //___________COMMOM____________
 
+*{
+	font-family: 'Euclid Square';
+}
+
+::-webkit-scrollbar{
+	width: 0;
+}
+
+
 
 :root {
 	font-size: 20px;
@@ -241,8 +250,8 @@ strong {
 
 .container {
 	width: 100%;
-	max-width: 75rem;
-	margin: 0 auto;
+	max-width: 70rem;
+	// margin: 0 auto;
 }
 
 //____ notefication _________
@@ -296,6 +305,7 @@ strong {
 		}
 	}
 }
+
 .notefications .toast-hide {
   animation: hide_toast 0.3s ease forwards;
 }
@@ -343,7 +353,7 @@ strong {
 	height: 100%;
 	z-index: 999;
 	background: rgba(0, 0, 0, 0.6);
-	transition: all 0.5s ease;
+	transition: background 0.5s ease-in;
 
 
 	&-content {
@@ -448,12 +458,13 @@ strong {
 
 .buttons {
 	position: fixed;
-	top: -15%;
+	top: 0;
 	left: 0;
+	bottom: 0;
 	width: 100%;
-	height: 100%;
+	height: 100% !important;
 	z-index: 99;
-	// background: rgba(0, 0, 0, 0.6);
+	background: rgba(0, 0, 0, 0.6);
 	&-content {
 		position: absolute;
 		bottom: 3rem;
@@ -524,7 +535,6 @@ strong {
 	height: 100%;
 	background: rgba(0, 0, 0, 0.67);
 	z-index: 9999;
-	display: none;
 
 	&__close {
 		position: absolute;
@@ -547,14 +557,27 @@ strong {
 	}
 }
 
+.fadeIn {
+	animation: fadeIn 0.5s forwards ease-in ;
+}
+
+@keyframes fadeIn {
+	0%{
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 
 // ______ Tel Btn _________
 
 .tel-btn {
 	position: fixed;
 	z-index: 100000000000000000000000000000000000000;
-	bottom: 12vh;
-	right: 5rem;
+	bottom: 4vh;
+	right: 2rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -573,7 +596,7 @@ strong {
 @keyframes pulse-yellow {
 	0% {
 		transform: scale(0.95);
-		box-shadow: 0 0 0 0 rgba(255, 199, 0, .3);
+		box-shadow: 0 0 0 0 rgba(240, 189, 5, 0.3);
 	}
 	
 	70% {
@@ -674,13 +697,17 @@ strong {
 	
 					&:hover {
 						background: $brown;
-	
+						img {
+							filter: brightness(0) invert(1);
+						}
+
 						svg path {
 							fill: #fff;
 						}
 					}
 	
-					svg {
+					img {
+						height: 1.2rem;
 						width: 1.2rem;
 					}
 				}
@@ -727,7 +754,7 @@ strong {
 			width: 35%;
 			margin-bottom: 1rem;
 			font-size: 1.2rem;
-
+			
 			&::before {
 				content: '';
 				width: 1.75rem;
@@ -804,8 +831,8 @@ flex-direction: column;
 	gap: 2rem;
 
 	&-item {
-		width: 12rem;
-		height: 9rem;
+		width: 16rem;
+		height: 11.25rem;
 		padding: 2rem 2rem 5rem;
 		border-radius: 1rem;
 		background: #F8F8F8;
@@ -877,8 +904,8 @@ flex-direction: column;
 		margin-bottom: 3rem;
 
 		&_item {
-			width: 20%;
-			height: 16rem;
+			width: 22%;
+			height: 18.05rem;
 			border-radius: 1rem 1rem 3rem 1rem;
 			overflow: hidden;
 			position: relative;
@@ -894,7 +921,7 @@ flex-direction: column;
 			&__name {
 			width: 100%;
 			z-index: 1000;
-			font-size: 0.9rem;
+			font-size: 1rem;
 			font-weight: 500;
 			}
 
@@ -966,7 +993,7 @@ flex-direction: column;
 		}
 
 		&_item-big {
-			width: 40%;
+			width: 49%;
 		}
 	}
 
@@ -1054,8 +1081,8 @@ flex-direction: column;
 		justify-content: space-between;
 	h2{
 		margin-top: 1.2rem;
-		margin-left: 8rem;
-
+		margin-left: 15.1rem;
+		margin-right: 3.5rem;
 	}
 	}
 
@@ -1071,8 +1098,7 @@ flex-direction: column;
 		}
 
 		
-		&_item {
-			// width: 34rem !important ;
+		&_item{
 			height: 20rem;
 			position: relative;
 			border-radius: 1rem;
@@ -1145,7 +1171,7 @@ flex-direction: column;
 			}
 			}
 
-			&__name {
+			&__name{
 			font-weight: 600;
 			font-size: 1.2rem;
 			position: relative;
@@ -1218,8 +1244,8 @@ flex-direction: column;
 	justify-content: space-between;
 	h2{
 		margin-top: 1.2rem;
-		margin-left: 8rem;
-
+		margin-left: 11.05rem;
+		margin-right: 3.5rem;
 	}
 
 }
@@ -1374,6 +1400,13 @@ flex-direction: column;
 
 // ____ footer ____
 .footer {
+
+	&__logo{
+		width: 10.9rem;
+		img {
+			width:100%;
+		}
+	}
 	&-map {
 		height: 35rem;
 		position: relative;
@@ -1959,9 +1992,9 @@ flex-direction: column;
 		}
 
 		&-contact {
-			width: 80%;
-			left:2%;
-			top: 3rem;
+			width: 90%;
+			left:5%;
+			top: 10rem;
 			transform: none;
 		}
 
